@@ -6,15 +6,15 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('cream.json')
+// const jsonServer = require('json-server')
+// const server = jsonServer.create()
+// const router = jsonServer.router('cream.json')
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.use(router)
+// app.use(router)
 
 const customRouter = jsonServer.rewriter({
   "/api/v1/*": "/$1",
